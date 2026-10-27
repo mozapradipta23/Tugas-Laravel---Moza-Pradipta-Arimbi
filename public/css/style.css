@@ -1,0 +1,247 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #f5f0e6;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: brown;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.full { grid-column: 1 / -1; }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: brown;
+}
+
+input.input-error,
+select.input-error {
+    border-color: #c00;
+}
+
+.error-text {
+    display: block;
+    margin-top: 4px;
+    color: #c00;
+    font-size: 13px;
+}
+
+.alert {
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: #fde8e8;
+    color: #a00;
+    border-radius: 5px;
+}
+
+
+.actions { margin-top: 24px; }
+
+.btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary   { background: brown; color: #fff; }
+.btn-secondary { background: #888;  color: #fff; }
+.btn:hover     { opacity: 0.85; }
+
+
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+
+
+
+.navbar {
+    background: brown;
+    padding: 14px 0;
+}
+
+.navbar .container {
+    margin: 0 auto;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.container.lebar { max-width: 1100px; }
+
+.header-halaman {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.header-halaman h2 { margin: 0; }
+
+.teks-redup {
+    margin: 4px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+.alert.sukses {
+    background: #e6f4ea;
+    color: #1e6b34;
+}
+
+.alert.peringatan {
+    background: #fff4d6;
+    color: #8a6100;
+}
+
+.tabel-wrap { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border: 1px solid #e3dccb;
+    text-align: left;
+    vertical-align: middle;
+}
+
+thead th {
+    background: brown;
+    color: #fff;
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even) { background: #faf6ec; }
+tbody tr:hover           { background: #f1e8d3; }
+
+td.tengah { text-align: center; }
+
+.aksi {
+    display: flex;
+    gap: 6px;
+}
+
+.aksi form { margin: 0; }
+
+.btn-sm {
+    padding: 5px 12px;
+    font-size: 13px;
+}
+
+.btn-edit  { background: #e0a100; color: #fff; }
+.btn-hapus { background: #c0392b; color: #fff; }
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.tampil { display: flex; }
+
+.modal-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 28px 24px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: muncul 0.2s ease-out;
+}
+
+@keyframes muncul {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-ikon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    line-height: 56px;
+    border-radius: 50%;
+    background: #fde8e8;
+    color: #c0392b;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modal-box h3 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.modal-box p {
+    margin: 0 0 22px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.modal-aksi {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
